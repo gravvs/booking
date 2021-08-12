@@ -37,6 +37,15 @@ const ImagePosition = styled.div`
     font-weight: 600;
     font-size: 14px;
   }
+
+@media only screen and (max-width: 650px){
+  h3{
+    font-size:15px
+  }
+  p{
+    font-size:12px;
+  }
+}
 `
 const Subwrapper = styled.div`
   width: 100%;
