@@ -19,6 +19,11 @@ const Info = styled.div`
   div p:hover {
     color: #bc5b01;
   }
+  @media only screen and (max-width: 650px){
+    div p {
+      font-size:12px;
+    }
+  }
 `
 const Footers = styled.div`
   display: flex;

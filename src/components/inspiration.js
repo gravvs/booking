@@ -39,6 +39,7 @@ const ImagePosition = styled.div`
   }
 
 @media only screen and (max-width: 650px){
+  width:100%;
   h3{
     font-size:15px
   }
