@@ -32,7 +32,7 @@ const Subscription = () => {
   return (
     <Wrapper>
       <Subwrapper>
-        <h2>Oszczedzaj czas i pieniądze!</h2>
+        <h2>Oszczędzaj czas i pieniądze!</h2>
         <p className="subscription__paragraph">
           Zaprenumeruj nasz biuletyn, a będziemy przesyłać Ci najlepsze oferty
         </p>
