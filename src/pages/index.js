@@ -4,10 +4,10 @@ import Finder from "../components/finder"
 import Content from "../components/content"
 import Footer from "../components/footer"
 import Inspiration from "../components/inspiration"
-import '../components/projekt.css'
+import "../components/projekt.css"
 import Coronavirus from "../components/coronavirus"
 import Subscription from "../components/subscription"
-import Place from '../components/place'
+import Place from "../components/place"
 import Discover from "../components/discover"
 import Cities from "../components/cities"
 

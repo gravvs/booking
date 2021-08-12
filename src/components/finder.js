@@ -1,6 +1,8 @@
-import React from "react"
+import React, { useState } from "react"
 import styled from "styled-components"
 import calendar from "../images/calendar.png"
+import Calendar from "./calendar"
+import Room from "./room"
 
 const FinderWrapper = styled.div`
   display: flex;
@@ -30,44 +32,61 @@ const FinderTable = styled.div`
   border: 1px solid #febb02;
   border-radius: 5px;
   width: 100%;
-  height: 52px;
 
-  button {
-    border: 3px solid #febb02;
-  }
   div:not(:nth-child(1)),
   button {
     cursor: pointer;
   }
-  button {
-    height: 100%;
-    width: 40%;
-    color: white;
-    background: #0071c2;
-    margin: 0;
+`
+const Table = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background: white;
+  :hover {
+    border: 1px solid black;
   }
-  button:hover {
-    background: #005999;
-  }
-  div {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    width: 100%;
-    background: white;
-  }
-  div img {
+
+  img {
     padding: 0 7px;
   }
 `
 const Border = styled.div`
+  position: relative;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  background: white;
+
   border: 3px solid #febb02;
-  height: 100%;
-  div:hover {
-    border: 1px solid black;
-  }
+  height: 52px;
 `
 const Finder = () => {
+  const [hide, setHide] = useState(false);
+  const [hides, setHides] = useState(false);
+  const showPopup = () => {
+    if (hides) {
+      setHides(!hides);
+      setHide(!hide);
+    } else {
+      setHide(!hide);
+    }
+  }
+  const showPopups = () => {
+    if (hide) {
+      setHide(!hide);
+      setHides(!hides);
+    } else {
+      setHides(!hides);
+    }
+  }
+
   return (
     <FinderWrapper>
       <FinderSubwrapper>
@@ -75,24 +94,25 @@ const Finder = () => {
           <h1>Znajdź oferty hoteli, domów i wielu innych obiektów...</h1>
           <p>Od przytulnych domków wiejskich po modne apartamenty w mieście</p>
         </div>
-        <FinderTable>
+        <FinderTable className="finder__table">
           <Border>
-            <div>
+            <Table>
               <img
                 src="//cf.bstatic.com/static/img/cross_product_index/accommodation/07ca5cacc9d77a7b50ca3c424ecd606114d9be75.svg"
                 alt="bed"
               />
               <p>Dokąd się wybierasz?</p>
-            </div>
+            </Table>
           </Border>
-          <Border>
-            <div>
+          <Border onClick={showPopup}>
+            <Table>
               <img src={calendar} alt="calendar" />
               <p>Zameldowanie - Wymeldowanie</p>
-            </div>
+            </Table>
+            {hide && <Calendar />}
           </Border>
           <Border>
-            <div>
+            <Table onClick={showPopups}>
               <img
                 src="//cf.bstatic.com/static/img/cross_product_index/guest/b2e5f2aa32b71ca0fc66aa671e4e958bcd69b7d0.svg"
                 alt="man"
@@ -102,9 +122,10 @@ const Finder = () => {
                 src="//cf.bstatic.com/static/img/cross_product_index/toggle/fb6f63d62231f9fe552d79b5448620b2e63c726e.svg"
                 alt="arrow"
               />
-            </div>
+            </Table>
+            {hides && <Room />}
           </Border>
-          <button>Szukaj</button>
+          <button className="search">Szukaj</button>
         </FinderTable>
         <div className="finder__input">
           <input type="checkbox" id="podróz" name="podróz" />

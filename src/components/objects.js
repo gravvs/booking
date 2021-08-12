@@ -6,12 +6,12 @@ import arrowright from "../images/arrow-right.png"
 
 const Categories = styled.div`
   display: flex;
-  overflow-x: scroll;
+  overflow-x: auto;
   ::-webkit-scrollbar {
     width: 0;
   }
-  div:not(:last-child){
-  padding-right: 16px;
+  div:not(:last-child) {
+    padding-right: 16px;
   }
 `
 const Object = styled.div`
@@ -38,21 +38,19 @@ const Objects = () => {
     document.getElementById("scrol2").scrollLeft += 223
   }
   const position = () => {
-    const x = document.getElementById("ckr983i5k1swx0b015bjkiy4h");
+    const x = document.getElementById("ckr983i5k1swx0b015bjkiy4h")
     var rect = x.getBoundingClientRect()
-    if(rect.left !== 112.546875){
-      const y = document.getElementById("lef");
+    if (rect.left !== 112.546875) {
+      const y = document.getElementById("lef")
       y.classList.add("visibles")
-    if(rect.left === -4124.453125){
-      const z = document.getElementById("righ");
-      z.classList.add("unvisible")
-    }
-    else if(rect.left !== -4124.453125){
-      const z = document.getElementById("righ");
-      z.classList.remove("unvisible")
-    }
-    }
-    else{
+      if (rect.left === -4124.453125) {
+        const z = document.getElementById("righ")
+        z.classList.add("unvisible")
+      } else if (rect.left !== -4124.453125) {
+        const z = document.getElementById("righ")
+        z.classList.remove("unvisible")
+      }
+    } else {
       document.getElementById("lef").classList.remove("visibles")
     }
   }
@@ -78,18 +76,33 @@ const Objects = () => {
             <h2>Szukaj według rodzaju obiektu</h2>
           </div>
           <div className="object__wrapper">
-            <div className="arrow-left" id="lef" onClick={function(event) {prev();position()}}>
-              <img src={arrowleft} alt="arrowl"/>
+            <div
+              className="arrow-left"
+              id="lef"
+              onClick={function (event) {
+                prev()
+                position()
+              }}
+            >
+              <img src={arrowleft} alt="arrowl" />
             </div>
-            <div className="arrow-right" id="righ" onClick={function(event) {next();position()}}>
-              <img src={arrowright} alt="arrowr"/>
+            <div
+              className="arrow-right"
+              id="righ"
+              onClick={function (event) {
+                next()
+                position()
+              }}
+            >
+              <img src={arrowright} alt="arrowr" />
             </div>
             <Categories id="scrol2">
               {categoria.map(categori => (
                 <Object id={categori.id}>
-                  <img src={categori.thumbnail} alt="picture"/>
+                  <img src={categori.thumbnail} alt="picture" />
                   <p>{categori.categorie}</p>
-                  <span>{categori.number}</span> <span>{categori.subnumber}</span> <span>{categori.what}</span>
+                  <span>{categori.number}</span>{" "}
+                  <span>{categori.subnumber}</span> <span>{categori.what}</span>
                 </Object>
               ))}
             </Categories>

@@ -6,7 +6,7 @@ import arrowright from "../images/arrow-right.png"
 
 const Categories = styled.div`
   display: flex;
-  overflow-x: scroll;
+  overflow-x: auto;
   ::-webkit-scrollbar {
     width: 0;
   }
@@ -21,12 +21,13 @@ const Object = styled.div`
   p {
     font-weight: 400;
     font-size: 14px;
+    margin: 3px;
   }
   p :nth-child(4) {
     font-weight: bold;
   }
   p :nth-child(3) {
-      color:grey;
+    color: grey;
   }
 `
 const Wrapper = styled.div`
@@ -42,21 +43,19 @@ const House = () => {
     document.getElementById("scrol-house").scrollLeft += 265
   }
   const position = () => {
-    const x = document.getElementById("ckros4rpk8ta90e04j3gbgxjo");
+    const x = document.getElementById("ckros4rpk8ta90e04j3gbgxjo")
     var rect = x.getBoundingClientRect()
-    if(rect.left !== 118.046875){
-      const y = document.getElementById("lefts");
+    if (rect.left !== 118.046875) {
+      const y = document.getElementById("lefts")
       y.classList.add("visibles")
-    if(rect.left === -408.953125){
-      const z = document.getElementById("rights");
-      z.classList.add("unvisible")
-    }
-    else if(rect.left !== -408.953125){
-      const z = document.getElementById("rights");
-      z.classList.remove("unvisible")
-    }
-    }
-    else{
+      if (rect.left === -408.953125) {
+        const z = document.getElementById("rights")
+        z.classList.add("unvisible")
+      } else if (rect.left !== -408.953125) {
+        const z = document.getElementById("rights")
+        z.classList.remove("unvisible")
+      }
+    } else {
       document.getElementById("lefts").classList.remove("visibles")
     }
   }
@@ -84,10 +83,24 @@ const House = () => {
             <h2>Domy, które goście kochają</h2>
           </div>
           <div className="poland__wrapper">
-            <div className="arrow-left" id="lefts" onClick={function(event) {prev();position()}}>
+            <div
+              className="arrow-left"
+              id="lefts"
+              onClick={function (event) {
+                prev()
+                position()
+              }}
+            >
               <img src={arrowleft} alt="arrowl" />
             </div>
-            <div className="arrow-right" id="rights" onClick={function(event) {next();position()}}>
+            <div
+              className="arrow-right"
+              id="rights"
+              onClick={function (event) {
+                next()
+                position()
+              }}
+            >
               <img src={arrowright} alt="arrowr" />
             </div>
             <Categories id="scrol-house">

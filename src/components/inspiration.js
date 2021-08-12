@@ -11,11 +11,11 @@ const Contact = styled.div`
   img {
     width: 100%;
   }
-  p{
-     margin:5px 0;
+  p {
+    margin: 5px 0;
   }
-  h3{
-    margin:8px 0;
+  h3 {
+    margin: 8px 0;
   }
 `
 const Table = styled.div`
@@ -52,15 +52,15 @@ const Biuletyn = styled.div`
   margin: 30px 0;
   width: 99%;
   align-items: center;
-position: relative;
+  position: relative;
   div div {
     display: flex;
   }
-  div:nth-child(3) p{
+  div:nth-child(3) p {
     position: absolute;
-top: 0;
-right: 0;
-padding-right: 10px;
+    top: 0;
+    right: 0;
+    padding-right: 10px;
   }
 `
 
