@@ -73,6 +73,7 @@ const Categories = styled.div`
   justify-content: flex-start;
   max-width: 1110px;
   overflow: auto;
+  overflow-y: hidden;
   p {
     margin: 0;
   }
