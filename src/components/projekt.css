@@ -1,6 +1,9 @@
 * {
   box-sizing: border-box;
 }
+html{
+  overflow-y: hidden;
+}
 body {
   margin: 0;
   width: 100vw;
@@ -74,6 +77,7 @@ body {
     url(https://cf.bstatic.com/xdata/images/city/540x270/844103.webp?k=b4ff3d17a962184dfa8823beec573fa3f679306e8b3fa897b901ba0dedb157bd&o=&fbclid=IwAR0AhDGkLL3Ox5axv9vFouCiMq10WBmlgVmz942wTJjKRO2BWxxr1lTn16Y)
       no-repeat center center;
   margin-right: 15px;
+  background-size: cover;
 }
 
 .content__image-1:hover {
@@ -86,6 +90,7 @@ body {
     url(https://cf.bstatic.com/xdata/images/city/540x270/879406.webp?k=dd541d1e78f3b12096d858880a21807954f88849a62946cca580a95ae81c99fb&o=&fbclid=IwAR0AhDGkLL3Ox5axv9vFouCiMq10WBmlgVmz942wTJjKRO2BWxxr1lTn16Y)
       no-repeat center center;
   margin-right: 0;
+  background-size: cover;
 }
 .content__image-2:hover {
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, -0.1)),
