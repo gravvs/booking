@@ -1,12 +1,10 @@
 * {
   box-sizing: border-box;
 }
-html{
-  overflow-x: hidden;
-}
 body {
   margin: 0;
   width: 100vw;
+  overflow-x: hidden;
 }
 .coronavirus__title {
   font-size: 16px;
@@ -509,7 +507,16 @@ label {
   margin-bottom: 0;
 }
 @media only screen and (max-width: 650px){
-  .finder__table{
-    flex-wrap: wrap;
+  body{
+    overflow-x: hidden;
+  }
+  .content__images{
+    display: none;
+  }
+  .subscription__frame{
+    width: 100%;
+  }
+  .footer__paragrapgh{
+    width: 100%;
   }
 }

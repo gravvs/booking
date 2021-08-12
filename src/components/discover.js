@@ -10,6 +10,9 @@ const Wrapper = styled.div`
   width: 82%;
   margin: auto;
   max-width: 1085px;
+  @media only screen and (max-width: 650px){
+    display:none;
+  }
 `
 const Description = styled.div`
 position:relative;

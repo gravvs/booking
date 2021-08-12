@@ -45,10 +45,7 @@ const Buttons = styled.div`
   }
 `
 
-const Room = () => {
-  const [x, setX] = useState(1)
-  const [y, setY] = useState(0)
-  const [z, setZ] = useState(1)
+const Room = ({x,y,z,setX,setY,setZ}) => {
   return (
     <Wrapper>
       <Subwrapper>
