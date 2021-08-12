@@ -32,6 +32,9 @@ const HeaderSubwrapper = styled.div`
     font-size: 24px;
     margin: 0;
   }
+  @media only screen and (max-width: 650px){
+    width:100%;
+  }
 `
 
 const HeaderInfo = styled.div`

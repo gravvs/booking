@@ -37,6 +37,11 @@ const FinderTable = styled.div`
   button {
     cursor: pointer;
   }
+
+@media only screen and (max-width: 650px){
+    flex-wrap: wrap;
+    border: none;
+}
 `
 const Table = styled.div`
   display: flex;
@@ -68,6 +73,9 @@ const Border = styled.div`
   height: 52px;
 `
 const Finder = () => {
+  const [x, setX] = useState(2)
+  const [y, setY] = useState(0)
+  const [z, setZ] = useState(1)
   const [hide, setHide] = useState(false);
   const [hides, setHides] = useState(false);
   const showPopup = () => {
@@ -117,13 +125,13 @@ const Finder = () => {
                 src="//cf.bstatic.com/static/img/cross_product_index/guest/b2e5f2aa32b71ca0fc66aa671e4e958bcd69b7d0.svg"
                 alt="man"
               />
-              <p>2 dorosłych &#x000B7; 0 dzieci &#x000B7; 1 pokój</p>
+              <p>{x} dorosłych &#x000B7; {y} dzieci &#x000B7; {z} pokój</p>
               <img
                 src="//cf.bstatic.com/static/img/cross_product_index/toggle/fb6f63d62231f9fe552d79b5448620b2e63c726e.svg"
                 alt="arrow"
               />
             </Table>
-            {hides && <Room />}
+            {hides && <Room x={x} y={y} z={z} setX={setX} setY={setY} setZ={setZ}/>}
           </Border>
           <button className="search">Szukaj</button>
         </FinderTable>

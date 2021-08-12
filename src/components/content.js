@@ -46,7 +46,7 @@ const ContentWrapper = styled.div`
 const Content = () => {
   return (
     <div className="content">
-      <div>
+      <div className="content__images">
         <ContentWrapper>
           <Image className="content__image-1">
             <ImageText>
