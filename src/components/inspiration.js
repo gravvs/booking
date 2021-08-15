@@ -47,6 +47,13 @@ const ImagePosition = styled.div`
     font-size:12px;
   }
 }
+@media only screen and (max-width: 450px){
+  width:100%;
+  h3,
+  p{
+    font-size:8px
+  }
+}
 `
 const Subwrapper = styled.div`
   width: 100%;

@@ -7,6 +7,7 @@ import plane from "../images/plane.png"
 import car from "../images/car.png"
 import wheel from "../images/wheel.png"
 import taxi from "../images/taxi-2.png"
+import Hamburgermenu from "./hamburger"
 
 const HeaderWrapper = styled.div`
   background: #003580;
@@ -29,11 +30,13 @@ const HeaderSubwrapper = styled.div`
   padding: 8px 0;
   div p {
     font-weight: bold;
-    font-size: 24px;
     margin: 0;
   }
   @media only screen and (max-width: 650px){
     width:100%;
+    div p {
+      padding-left: 10px;
+    }
   }
 `
 
@@ -41,6 +44,7 @@ const HeaderInfo = styled.div`
   display: flex;
   align-items: center;
   flex-wrap: wrap;
+  flex: 1;
 
   div {
     padding: 8px;
@@ -61,6 +65,9 @@ const HeaderInfo = styled.div`
     width: 24px;
     height: 24px;
     border-radius: 50%;
+  }
+  @media only screen and (max-width: 650px){
+    display:none;
   }
 `
 
@@ -95,11 +102,11 @@ const Categories = styled.div`
     background: rgba(217, 217, 217, 0.2);
   }
 `
-const Header = () => {
+const Header = ({manageShow, show}) => {
   return (
     <HeaderWrapper>
       <HeaderSubwrapper>
-        <div>
+        <div className="header__booking">
           <p>
             Booking<span>.com</span>
           </p>
@@ -120,6 +127,7 @@ const Header = () => {
             <span>Zaloguj się</span>
           </HeaderSquare>
         </HeaderInfo>
+        <Hamburgermenu manageShow={manageShow} show={show}/>
       </HeaderSubwrapper>
       <Categories>
         <div className="header__bed">

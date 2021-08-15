@@ -1,3 +1,4 @@
+import { number } from "prop-types"
 import React, { useState } from "react"
 import styled from "styled-components"
 import calendar from "../images/calendar.png"
@@ -78,6 +79,9 @@ const Finder = () => {
   const [z, setZ] = useState(1)
   const [hide, setHide] = useState(false);
   const [hides, setHides] = useState(false);
+  const [zameldowanie, setZameldowanie] = useState("Zameldowanie");
+  const [wymeldowanie, setWymeldowanie] = useState("Wymeldowanie");
+
   const showPopup = () => {
     if (hides) {
       setHides(!hides);
@@ -95,6 +99,16 @@ const Finder = () => {
     }
   }
 
+  const setObject = (e) => {
+    if(zameldowanie !== "Zameldowanie") {
+      setWymeldowanie(e);
+      console.log(zameldowanie)
+      console.log(typeof(wymeldowanie))
+    }
+    else{
+    setZameldowanie(e);
+    }
+  };
   return (
     <FinderWrapper>
       <FinderSubwrapper>
@@ -112,12 +126,12 @@ const Finder = () => {
               <p>Dokąd się wybierasz?</p>
             </Table>
           </Border>
-          <Border onClick={showPopup}>
-            <Table>
+          <Border >
+            <Table onClick={showPopup}>
               <img src={calendar} alt="calendar" />
-              <p>Zameldowanie - Wymeldowanie</p>
+              <p>{zameldowanie} - {wymeldowanie}</p>
             </Table>
-            {hide && <Calendar />}
+            {hide && <Calendar setObject={setObject}/>}
           </Border>
           <Border>
             <Table onClick={showPopups}>

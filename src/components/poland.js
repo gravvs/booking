@@ -27,6 +27,11 @@ const Object = styled.div`
   span {
     font-size: 14px;
   }
+  @media only screen and (max-width: 450px){
+    img{
+    width:120px;
+    height:120px;
+  }}
 `
 const Poland = () => {
   const prev = () => {
