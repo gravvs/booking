@@ -8,6 +8,9 @@ const Wrapper = styled.div`
   margin: auto;
   max-width: 1110px;
   position: relative;
+  @media only screen and (max-width: 650px){
+    display:none;
+  }
 `
 const Slideshow = styled.div`
   width: 100%;

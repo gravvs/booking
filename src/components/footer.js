@@ -20,8 +20,14 @@ const Info = styled.div`
     color: #bc5b01;
   }
   @media only screen and (max-width: 650px){
+    padding-left:10px;
     div p {
       font-size:12px;
+    }
+  }
+  @media only screen and (max-width: 450px){
+    div p {
+      font-size:8px;
     }
   }
 `
@@ -48,6 +54,11 @@ const Login = styled.div`
   max-width: 1110px;
   div:nth-child(2) p {
     font-size: 12px;
+  }
+  @media only screen and (max-width: 450px){
+    div:nth-child(2) p{
+      font-size:10px;
+    }
   }
 `
 const Sublogin = styled.div`
@@ -82,6 +93,11 @@ const Title = styled.div`
   }
   div img {
     padding: 0 20px;
+  }
+  @media only screen and (max-width: 450px){
+    div p {
+      font-size:10px;
+    }
   }
 `
 const Images = styled.div`
