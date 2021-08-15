@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import styled from "styled-components"
 
 const Wrapper = styled.div`
@@ -13,6 +13,9 @@ const Wrapper = styled.div`
   border-radius: 4px;
   box-shadow: 0 2px 16px rgba(0, 0, 0, 0.15);
   z-index: 3;
+  @media only screen and (max-width: 650px){
+    width:100%;
+  }
 `
 
 const Subwrapper = styled.div`

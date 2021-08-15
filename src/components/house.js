@@ -29,6 +29,12 @@ const Object = styled.div`
   p :nth-child(3) {
     color: grey;
   }
+
+  @media only screen and (max-width: 450px){
+    img{
+    width:120px;
+    height:120px;
+  }}
 `
 const Wrapper = styled.div`
   width: 99%;

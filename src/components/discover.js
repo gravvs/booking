@@ -127,7 +127,6 @@ const Discover = () => {
               <p>Więcej krajów</p>
             </Subwrapper>
           </div>
-          {console.log(discovers)}
           <Image id="imager">
             {discovers.map(discover => (
               <div className="discover__subwrapper">

@@ -16,6 +16,10 @@ body {
 .block {
   display: block;
 }
+.header__booking{
+  font-size: 24px;
+  flex: 1;
+}
 .header__bed {
   position: relative;
 }
@@ -478,7 +482,7 @@ label {
   margin-top: 0.5em;
 }
 .date-grid button:first-child {
-  grid-column: 6;
+  grid-column: 7;
 }
 .date-grid button {
   position: relative;
@@ -506,6 +510,15 @@ label {
 .room__kids{
   margin-bottom: 0;
 }
+.index__height{
+  height: 10px;
+  overflow: hidden;
+}
+.burger__x{
+  position: absolute;
+  top: 0;
+  right: 0;
+}
 @media only screen and (max-width: 650px){
   body{
     overflow-x: hidden;
@@ -518,5 +531,32 @@ label {
   }
   .footer__paragrapgh{
     width: 100%;
+  }
+  .search{
+    width: 100%;
+  }
+  .place__wrapper{
+    display: none;
+  }
+}
+@media only screen and (max-width: 450px){
+  .inspiration__image-1,
+  .inspiration__image-2,
+  .inspiration__image-3,
+  .inspiration__image-4,
+  .inspiration__image-5{
+    height: 200px;
+  }
+  .footer__paragrapgh p {
+    font-size: 8px;
+  }
+  .arrow-right{
+    display: none;
+  }
+  .house__opinion{
+    flex-wrap: wrap-reverse;
+  }
+  .house__opinion span {
+    margin: 3px;
   }
 }
